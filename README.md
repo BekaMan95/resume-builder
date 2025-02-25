@@ -20,7 +20,7 @@
 ### **1️⃣ Install Dependencies**  
 Make sure you have **Git** installed, then run:  
 ```bash
-git clone https://github.com/BekaMan95/resume-builder.git
+git clone https://github.com/BekaMan95/resume-builder.git retro-app
 cd retro-app
 ```
 
