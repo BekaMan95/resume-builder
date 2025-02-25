@@ -5,7 +5,7 @@ import Container from "./components/Container";
 
 
 const App: React.FC = () => {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   return (
     <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-blue-300 to-green-200 text-green-300 font-mono">
