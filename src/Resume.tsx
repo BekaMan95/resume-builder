@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt, faBriefcase, faGraduationCap, faCode } from "@fortawesome/free-solid-svg-icons";
-import Experience from './Mods'
 
 interface ResumeProps {
     name: string;
@@ -9,8 +8,12 @@ interface ResumeProps {
     email: string;
     phone: string;
     location: string;
-    experience1: Experience;
-    experience2: Experience;
+    experience1_position: string;
+    experience1_company: string;
+    experience1_details: string;
+    experience2_position: string;
+    experience2_company: string;
+    experience2_details: string;
     education: string;
     skills: string;
 }
@@ -23,12 +26,17 @@ const Resume: React.FC<ResumeProps> = ({
     email, 
     phone, 
     location, 
-    experience1,
-    experience2, 
-    education, 
-    skills 
+    experience1_position,
+    experience1_company,
+    experience1_details,
+    experience2_position,
+    experience2_company,
+    experience2_details,
+    education,
+    skills
 }) => {
   const skillsList = skills.split(",").map((item: string) => item.trim());
+  const educationList = education.split(",").map((item: string) => item.trim());
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
@@ -72,12 +80,12 @@ const Resume: React.FC<ResumeProps> = ({
           </h2>
           <ul className="list-disc pl-6 text-gray-600 mt-2">
             <li>
-              <strong> {experience1.position} </strong> - {experience1.company}
-              <p className="text-sm text-gray-500"> {experience1.details} </p>
+              <strong> {experience1_position} </strong> - {experience1_company}
+              <p className="text-sm text-gray-500"> {experience1_details} </p>
             </li>
             <li>
-              <strong> {experience2.position} </strong> - {experience2.company}
-              <p className="text-sm text-gray-500"> {experience2.details} </p>
+              <strong> {experience2_position} </strong> - {experience2_company}
+              <p className="text-sm text-gray-500"> {experience2_details} </p>
             </li>
           </ul>
         </div>
@@ -89,9 +97,11 @@ const Resume: React.FC<ResumeProps> = ({
             Education
           </h2>
           <ul className="list-disc pl-6 text-gray-600 mt-2">
-            <li>
-              <p> {education} </p>
-            </li>
+            {
+                educationList.map((edu_item: string) => (
+                    <li> {edu_item} </li>
+                ))
+            }
           </ul>
         </div>
 
