@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Welcome from "./Welcome";
-import ResumeForm from "./ResumeForm";
-import Container from "./Container";
+import ResumeForm from "./components/ResumeForm";
+import Container from "./components/Container";
 
 
 const App: React.FC = () => {
